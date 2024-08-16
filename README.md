@@ -2,8 +2,6 @@
 
 [Godot](https://github.com/godotengine/godot) 4.1.1 bindings for [Spout](https://github.com/leadedge/Spout2).
 
-The Godot 3 engine module is located on the `godot-3` branch.
-
 ## Status
 
 The sender/receiver apis have been implemented but are mostly untested. Please open an issue
@@ -28,19 +26,23 @@ Run `build.sh` in a bash-compatible terminal. This will:
 * Compile the gdextension bindings
 * Compile spout-gd
 
-Once compilation is finished, the following files should be moved to your project's `addons/spout-gd` folder (create it manually if it does not exist):
+Once compilation is finished, create `addons/spout-gd` folder in the project root, then copy the following files there:
 
-* `spout_gd.gdextension`
-* `Spout2/Binaries/x64/SpoutLibrary.dll`
-* `out/pick_the_correct_file_here.dll`
+* `spout_gd.gdextension` -> `root`
+* `Spout2/Binaries/x64/SpoutLibrary.dll` -> `bin/SpoutLibrary.dll`
+* `out/spout_gd.windows.template_debug.dll` -> `bin/spout_gd.windows.template_debug.dll`
+* `out/spout_gd.windows.template_release.dll` -> `bin/spout_gd.windows.template_release.dll`
 
 ## Basic usage
 
 ```gdscript
 var spout: Spout
-var my_image: Image = load_from_somewhere_idk() # Provide your own image somehow
+var img: Image
+
 func _ready():
     spout = Spout.new()
     
-    spout.send_image(my_image, image.get_width(), image.get_height())
+func _process():
+    img = get_viewport().get_texture().get_image()
+    spout.send_image(img, img.get_width(), img.get_height(), Spout.FORMAT_RGBA, false)
 ```
