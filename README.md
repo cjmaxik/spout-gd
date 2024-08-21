@@ -18,7 +18,7 @@ Prerequisites:
 * a C++ compiler capable of [compiling Godot](https://docs.godotengine.org/en/stable/contributing/development/compiling/compiling_for_windows.html)
 * cmake
 
-Clone the repository: `git clone --recurse-submodules https://github.com/you-win/spout-gd.git`
+Clone the repository: `git clone --recurse-submodules https://github.com/cjmaxik/spout-gd.git`
 
 Run `build.sh` in a bash-compatible terminal. This will:
 
