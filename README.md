@@ -19,8 +19,9 @@ Prerequisites:
 * scons
 * cmake
 * a C++ compiler capable of [compiling Godot](https://docs.godotengine.org/en/stable/contributing/development/compiling/compiling_for_windows.html)
-    > [!TIP]
-    > You can quickly make a compatible virtual machine using Hyper-V's "Quick Create" feature.
+
+> [!TIP]
+> You can quickly make a compatible dev machine using Hyper-V, see [this thread](https://github.com/godotengine/godot-docs-user-notes/discussions/10#discussioncomment-10357288).
 
 Clone the repository: `git clone --recurse-submodules https://github.com/cjmaxik/spout-gd.git`
 
@@ -53,3 +54,9 @@ func _process():
 
 > [!IMPORTANT]
 > `send_texture` and `send_fbo` are not working on Vulkan/Forward+ since Spout2 does not support Vulkan, see [#69](https://github.com/leadedge/Spout2/issues/69).
+
+## Acknowledgements
+
+* [Spout2](https://github.com/leadedge/Spout2) by Lynn Jarvis (leadedge)
+* [Original Spout GD](https://github.com/you-win/spout-gd) by Timothy Yuen (you-win)
+* [`build.bat`](https://github.com/cappelnord/spout-gd/commit/9d50cc364fe4133bdc3675434cb0c51cd418b44c) by Patrick Borgeat (cappelnord)
